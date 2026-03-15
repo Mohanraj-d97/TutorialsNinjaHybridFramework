@@ -3,12 +3,15 @@
 <suite name="TutorialsNinja Automation Suite">
   <listeners>
   	<listener class-name="com.tutorialsninja.qa.listeners.MyListeners" />
+    <!-- If you have listeners, provide the fully-qualified class name here -->
+    <!-- <listener class-name="com.yourpackage.MyListeners" /> -->
   </listeners>
+
   <test name="TutorialsNinja Tests">
     <classes>
       <class name="com.tutorialsninja.qa.testcases.RegisterTest"/>
       <class name="com.tutorialsninja.qa.testcases.LoginTest"/>
       <class name="com.tutorialsninja.qa.testcases.SearchTest"/>
     </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+  </test>
+</suite>

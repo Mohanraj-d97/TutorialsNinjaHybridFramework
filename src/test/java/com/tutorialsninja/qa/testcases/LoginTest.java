@@ -22,7 +22,7 @@ public class LoginTest extends Base{
 		super();
 	}
 	
-	public WebDriver driver;
+	//public WebDriver driver;
 	
 	@BeforeMethod
 	public void setup() {

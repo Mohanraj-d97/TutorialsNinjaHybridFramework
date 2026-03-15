@@ -7,6 +7,7 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
@@ -17,7 +18,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Base {
 	
-	WebDriver driver;
+	public WebDriver driver;
 	public Properties prop;
 	public Properties dataProp;
 		
@@ -49,9 +50,19 @@ public class Base {
 			
 		if(browserName.equalsIgnoreCase("chrome")) {
 			
-			WebDriverManager.chromedriver().setup(); // ✅ This line downloads and sets the driver path automatically
+			//WebDriverManager.chromedriver().setup(); // ✅ This line downloads and sets the driver path automatically
+		
+			WebDriverManager.chromedriver().setup();  // Driver compatibility
+			ChromeOptions options = new ChromeOptions(); // Browser config
+			options.addArguments("--remote-allow-origins=*"); // Chrome 111+ fix
+			options.addArguments("--start-maximized"); // Stable UI
+			options.addArguments("--disable-notifications"); // No popups
+			options.addArguments("--disable-infobars"); // Clean UI
 			
-			driver = new ChromeDriver();
+			driver = new ChromeDriver(options);
+
+			
+			//driver = new ChromeDriver();
 			
 		}else if(browserName.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
