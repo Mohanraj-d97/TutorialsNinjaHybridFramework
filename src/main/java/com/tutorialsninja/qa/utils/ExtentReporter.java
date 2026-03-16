@@ -25,6 +25,7 @@ public class ExtentReporter {
 		extentReport.attachReporter(sparkReporter);
 		
 		Properties configProp = new Properties();
+		
 		File configPropFile = new File(System.getProperty("user.dir")+"\\src\\main\\java\\com\\tutorialsninja\\qa\\config\\config.properties");
 		
 		try {
