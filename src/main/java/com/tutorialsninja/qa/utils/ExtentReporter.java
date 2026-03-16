@@ -12,6 +12,7 @@ public class ExtentReporter {
 	
 	public static ExtentReports generateExtentReport() {
 		
+		
 		ExtentReports extentReport = new ExtentReports();
 		
 		File extentReportFile = new File(System.getProperty("user.dir")+"\\test-output\\ExtentReports\\extentReport.html");
